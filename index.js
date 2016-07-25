@@ -21,3 +21,59 @@ const zebraStripes = [
   { width: 0.59, color: null },
   { width: 7.31, color: null },
 ];
+
+// var sortedRobots = robots.map(function(robot) {
+//   return Object.assign({}, robot, {
+//     name: robot.name,
+//     property: function(){
+//     if (knownDecepticons.includes(robot.name)) {
+//       alliance: 'decepticon'
+//     } else {
+//       alliance: 'autobot'
+//     }
+//   }
+//   })
+// })
+
+var sortedRobots = robots.map(function(robot) {
+  if (knownDecepticons.includes(robot.name)) {
+    return Object.assign({}, robot, {
+      // name: robot.name,
+      alliance: 'decepticon'
+  })
+  } else {
+    return Object.assign({}, robot, {
+      // name: robot.name,
+      alliance: 'autobot'
+    })
+  }
+});
+
+// var sortedRobots = robots.slice()
+//
+// sortedRobots = sortedRobots.map((robot) =>{
+//   if (knownDecepticons.includes(robot.name)){
+//     return {name: robot.name, alliance: "decepticon"}
+//   } else {
+//     return {name: robot.name, alliance: "autobot"}
+//   }
+// })
+
+// var coloredZebraStripes = zebraStripes.map(function(zebra, index) {
+//   if (index % 2 === 0 )
+//   {
+//     return Object.assign({}, zebra { color: "black" })
+//   }
+//   else
+//   {
+//     return Object.assign({}, zebra { color: "white"})
+//   }
+// })
+
+var coloredZebraStripes = zebraStripes.map(function(zebra, index) {
+  if (index % 2 === 0) {
+    return Object.assign({}, zebra, {color: "black"});
+  } else {
+    return Object.assign({}, zebra, {color: "white"});
+  }
+})
